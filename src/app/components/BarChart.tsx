@@ -5,20 +5,34 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 const salesDate = [
     {
         name: 'Jan',
-        revenue: 4000,
-        profit: 2400,
+        JornadaAtena: 5000,
+        Cobranca: 2400,
     },
     {
         name: 'Fev',
-        revenue: 3000,
-        profit: 1398,
+        JornadaAtena: 3000,
+        Cobranca: 1398,
     },
     {
         name: 'Mar',
-        revenue: 9800,
-        profit: 2000,
+        JornadaAtena: 7800,
+        Cobranca: 2200,
     },
-    
+    {
+        name: 'Abr',
+        JornadaAtena: 8900,
+        Cobranca: 2500,
+    },
+    {
+        name: 'Mai',
+        JornadaAtena: 7200,
+        Cobranca: 3200,
+    },
+    {
+        name: 'Jun',
+        JornadaAtena: 6200,
+        Cobranca: 5200,
+    },
 ];
 
 const BarChartComponent = () => {
@@ -34,8 +48,8 @@ const BarChartComponent = () => {
                 <YAxis />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend />
-                <Bar dataKey="revenue" fill="#2563eb" />
-                <Bar dataKey="profit" fill="#8b5cf6" />
+                <Bar dataKey="JornadaAtena" fill="#2563eb" />
+                <Bar dataKey="Cobranca" fill="#8b5cf6" />
             </BarChart>
         </ResponsiveContainer>
     );
@@ -55,11 +69,11 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps ) => {
             <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
                 <p className="text-mefium text-lg">{label}</p>
                 <p className="text-sm text-blue-400">
-                    Revenue:
+                JornadaAtena:
                     <span className="ml-2">${payload[0].value}</span>
                 </p>
                 <p className="text-sm text-indigo-400">
-                    Profit:
+                Cobranca:
                     <span className="ml-2">${payload[1].value}</span>
                 </p>
             </div>
